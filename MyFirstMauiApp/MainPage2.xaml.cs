@@ -1,12 +1,16 @@
-﻿namespace MyFirstMauiApp
+﻿using MyFirstMauiApp.ViewModel;
+
+namespace MyFirstMauiApp
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage2 : ContentPage
     {
         int count = 0;
 
-        public MainPage()
+        public MainPage2(MainPage2ViewModel vm)
         {
             InitializeComponent();
+            BindingContext = vm;
+
         }
 
         private void OnCounterClicked(object sender, EventArgs e)

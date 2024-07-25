@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui.Markup;
 using Microsoft.Extensions.Logging;
+using MyFirstMauiApp.ViewModel;
 
 namespace MyFirstMauiApp
 {
@@ -17,8 +18,11 @@ namespace MyFirstMauiApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<MainPage2>();
+            builder.Services.AddSingleton<MainPage2ViewModel>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
